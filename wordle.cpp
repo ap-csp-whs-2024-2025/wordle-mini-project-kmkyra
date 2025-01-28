@@ -11,8 +11,13 @@
 #include <string>    // std::string, std::getline
 #include <vector>    // std::vector
 
+
 std::vector<int> createSecret() {
-    // Write this procedure here
+    int numA = std::rand();
+    int numB = std::rand();
+    int numC = std::rand();
+    int numD = std::rand();
+    secret_code.push_back
     return {};    // replace this with your code
 }
 
@@ -32,6 +37,8 @@ int main()
     // Uncomment the code when you are finished testing your program
     // and want to have the program run for real
     // srand(time(0));
+    int random_num = rand() % 10;
+    
     
     std::vector<int> secret_code = createSecret();
     std::vector<int> user_guess = {};
