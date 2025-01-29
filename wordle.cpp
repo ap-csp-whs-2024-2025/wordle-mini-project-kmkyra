@@ -13,17 +13,33 @@
 
 
 std::vector<int> createSecret() {
-    int numA = std::rand();
-    int numB = std::rand();
-    int numC = std::rand();
-    int numD = std::rand();
-    secret_code.push_back
-    return {};    // replace this with your code
+   std::vector<int> secret;
+    for(int i = 0; i < 4; i = i+1)
+    {
+        secret.push_back(std::rand());
+    }
+    return secret;    // replace this with your code
 }
 
 std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> guess) {
-    // Write this procedure here
+    int index = 0;
+    std::vector<std::string> hint;
+    while(x<=4)
+    {
+       if(guess[index] = secret[index]) 
+       {
+        hint.push_back("O");
+       }
+       else
+       {
+        hint.push_back("X");
+       } 
+       index = index + 1;
+    }
+   
     return {"X", "X", "X", "X"};    // replace this with your code
+//loop 4 times: if item 1 of secret matches item 1 of guess, 
+//popback O, else popback x.... index +1
 }
 
 bool winGame(std::vector<int> secret, std::vector<int> guess) {
