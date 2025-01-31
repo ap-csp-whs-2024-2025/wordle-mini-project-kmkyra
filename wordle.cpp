@@ -48,17 +48,15 @@ std::vector<std::string> getHint(std::vector<int> secret, std::vector<int> user_
 
 bool winGame(std::vector<int> secret, std::vector<int> user_guess) 
 {
+    
     int index = 0;
     while(index < 4)
     {
-        if(user_guess[index] == secret[index])
+        if(user_guess[index] != secret[index])
         {
-            index = index + 1;    
+            return false;     
         }  
-        else
-        {
-            return false;    
-        }
+        index = index + 1;
     }
     return true;
 }
@@ -71,7 +69,7 @@ int main()
      srand(time(0));
     
     std::vector<int> secret_code = createSecret();
-    std::vector<int> user_guess = {};
+    std::vector<int> user_guess = {-1, -1, -1, -1};
     std::vector<std::string> hint = {};    // an empty list
 
     int secret_code_length = 4;
@@ -87,7 +85,8 @@ int main()
         {
             int input;
             std::cin >> input;
-            user_guess.push_back(input);    // can also do append(guess, input);
+            //user_guess.push_back(input);    // can also do append(guess, input);
+            user_guess[counter] = input;
         }
 
         hint = getHint(secret_code, user_guess);
